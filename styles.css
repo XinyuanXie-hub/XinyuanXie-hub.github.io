@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  font-family: "Lato", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #212121;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 14.6667px;
+  font-weight: 400;
+  line-height: 24.4449px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 92px 0 72px;
+}
+
+.masthead {
+  width: min(738px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  color: #226e93;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 48.6px;
+  text-align: center;
+}
+
+.content {
+  width: min(1130px, calc(100% - 140px));
+  margin: 96px auto 0;
+}
+
+.introduction,
+.introduction p,
+h2 {
+  margin: 0;
+  font-size: 14.6667px;
+  line-height: 24.4449px;
+}
+
+.introduction p + p {
+  margin-top: 24.4449px;
+}
+
+.publications {
+  margin-top: 64px;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+.paper-list {
+  margin: 14px 0 0;
+  padding-left: 1.35rem;
+}
+
+.paper-list li + li {
+  margin-top: 10px;
+}
+
+a {
+  color: #006580;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus-visible {
+  color: #004e63;
+}
+
+a:focus-visible {
+  outline: 2px solid #226e93;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding-top: 56px;
+  }
+
+  .masthead,
+  .content {
+    width: calc(100% - 40px);
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 43.2px;
+  }
+
+  .content {
+    margin-top: 56px;
+  }
+
+  .publications {
+    margin-top: 48px;
+  }
+}

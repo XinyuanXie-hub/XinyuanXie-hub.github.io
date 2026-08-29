@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xinyuanxie-hub.github.io/sitemap.xml
