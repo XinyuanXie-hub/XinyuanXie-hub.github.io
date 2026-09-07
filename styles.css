@@ -149,7 +149,8 @@ h2 {
 
 .paper-list {
   margin: 12px 0 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
 }
 
 .paper-list li + li {
