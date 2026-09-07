@@ -149,8 +149,8 @@ h2 {
 
 .paper-list {
   margin: 12px 0 0;
-  padding: 0;
-  list-style: none;
+  padding: 0 0 0 40px;
+  list-style-type: disc;
 }
 
 .paper-list li + li {
