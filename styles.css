@@ -1,6 +1,70 @@
+/* Normal Lato faces from the Google stylesheet used by the reference page.
+   Keep its exact v25 font assets, weights, display mode, and character ranges.
+   Unused italic faces are omitted; publication emphasis remains unchanged. */
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   color-scheme: light;
   font-family: "Lato", sans-serif;
+  /* Keep roughly 900px of text after the outer gutters and inner insets. */
+  --site-max-width: 1024px;
+  --site-gutter: 48px;
+  --column-inset: 1.25%;
+  --text-inset: 8px;
+  --section-padding: 24px;
 }
 
 * {
@@ -18,9 +82,9 @@ body {
   background: #ffffff;
   color: #212121;
   font-family: "Lato", sans-serif;
-  font-size: 14.6667px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 24.4449px;
+  line-height: 26px;
 }
 
 .page {
@@ -30,9 +94,14 @@ body {
   font-variant-ligatures: none;
 }
 
-.masthead {
-  width: min(738px, calc(100% - 40px));
-  margin: 0 auto;
+.masthead,
+.content {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--site-gutter);
+  padding-left: var(--site-gutter);
 }
 
 h1 {
@@ -45,24 +114,33 @@ h1 {
 }
 
 .content {
-  width: min(1130px, calc(100% - 140px));
-  margin: 96px auto 0;
+  margin-top: 56px;
 }
 
 .introduction,
+.publications {
+  /* Flatten Google's column inset + text-block padding without extra wrappers. */
+  margin-right: var(--column-inset);
+  margin-left: var(--column-inset);
+  padding-right: var(--text-inset);
+  padding-left: var(--text-inset);
+  overflow-wrap: break-word;
+}
+
 .introduction p,
 h2 {
   margin: 0;
-  font-size: 14.6667px;
-  line-height: 24.4449px;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .introduction p + p {
-  margin-top: 24.4449px;
+  /* Approximately 12px in the saved reference; keep separate paragraphs. */
+  margin-top: 12px;
 }
 
 .publications {
-  margin-top: 64px;
+  margin-top: calc(2 * (var(--section-padding) + var(--text-inset)));
 }
 
 h2 {
@@ -70,12 +148,12 @@ h2 {
 }
 
 .paper-list {
-  margin: 14px 0 0;
-  padding-left: 1.35rem;
+  margin: 12px 0 0;
+  padding-left: 20px;
 }
 
 .paper-list li + li {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 a {
@@ -89,13 +167,14 @@ a:focus-visible {
 }
 
 @media (max-width: 767px) {
-  .page {
-    padding-top: 56px;
+  :root {
+    --site-max-width: none;
+    --site-gutter: 5px;
+    --column-inset: 3.75%;
   }
 
-  .masthead,
-  .content {
-    width: calc(100% - 40px);
+  .page {
+    padding-top: 56px;
   }
 
   h1 {
@@ -108,6 +187,14 @@ a:focus-visible {
   }
 
   .publications {
-    margin-top: 48px;
+    margin-top: calc(2 * var(--section-padding));
+  }
+}
+
+/* Google Sites uses a centered six-column band between phone and desktop. */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --site-max-width: 544px;
+    --column-inset: 2.5%;
   }
 }
